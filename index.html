@@ -3,291 +3,642 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OvenGlow Cleaning Services</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Animate On Scroll -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+  <title>Oven Glow Cleaning – Book Your Oven Cleaning</title>
   <style>
-    :root {
-      --primary-color: #005baa; 
-      --secondary-color: #cce6ff;
-      --accent-color: #ffdd57;
-      --bg-color: #eaf6ff;
-      --text-color: #003366;
-      --white: #ffffff;
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      overflow-x: hidden;
+      color: #2c3e50;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
     header {
-      background: linear-gradient(to right, var(--primary-color), #004080);
-      color: white;
-      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      color: #fff;
       text-align: center;
-      position: sticky;
+      padding: 3rem 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
     }
 
-    header img {
-      max-width: 120px;
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(45deg, #fff, #f39c12);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    header img:hover {
-      transform: scale(1.05);
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      background-color: #003f7f;
-      padding: 0.5rem 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background: var(--accent-color);
-      color: #003366;
-    }
-
+    /* Main Styles */
     main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 2rem;
+      padding: 3rem 0;
     }
 
-    .section {
+    /* Intro Section */
+    .intro {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      text-align: center;
       margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
     }
 
-    .section.visible {
-      opacity: 1;
+    .intro h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f39c12);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #f39c12;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Booking Form Section */
+    .booking-form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .booking-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f39c12);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .booking-form h2 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .booking-form h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #3498db, #f39c12);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* Form Styles */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 0.95rem;
+    }
+
+    .required {
+      color: #e74c3c;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 2px solid #ecf0f1;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #fff;
+      font-family: inherit;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+      transform: translateY(-2px);
+    }
+
+    form input:hover, form select:hover, form textarea:hover {
+      border-color: #bdc3c7;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    form select {
+      cursor: pointer;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+    }
+
+    .submit-btn:active {
       transform: translateY(0);
     }
 
-    h1, h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      position: relative;
-      padding-left: 25px;
-      margin-bottom: 0.75rem;
-    }
-
-    ul li::before {
-      content: "✔";
+    .submit-btn::before {
+      content: '';
       position: absolute;
-      left: 0;
-      color: var(--primary-color);
-    }
-
-    .contact-info {
-      background-color: var(--secondary-color);
-      padding: 1.5rem;
-      border-radius: 10px;
-    }
-
-    form {
-      background-color: var(--white);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    form:hover {
-      transform: translateY(-5px);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #004080;
-    }
-
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 10px 15px;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
       border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: none;
-      z-index: 999;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
     }
 
+    .submit-btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #f39c12;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    footer a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Success Message */
+    .success-message {
+      display: none;
+      background: #2ecc71;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      text-align: center;
+      animation: slideDown 0.5s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffffff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 1rem;
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-group.full-width {
+        grid-column: span 1;
       }
 
-      .section {
-        margin-bottom: 2rem;
+      header h1 {
+        font-size: 2.2rem;
       }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .intro {
+        padding: 2rem;
+      }
+
+      .intro h2 {
+        font-size: 1.8rem;
+      }
+
+      .booking-form {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .booking-form {
+        padding: 1.5rem;
+      }
+
+      .intro {
+        padding: 1.5rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Animation on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>Oven Glow Cleaning</h1>
+      <p>Professional Oven Cleaning Service in Shropshire, Wolverhampton & Surrounding Areas</p>
+    </div>
+  </header>
 
-<header>
-  <img src="logo.png" alt="OvenGlow Logo" />
-  <h1>OvenGlow Cleaning Services</h1>
-</header>
+  <main class="container">
+    <section class="intro fade-in">
+      <h2>Why Choose Us?</h2>
+      <p>We provide safe, eco-friendly, and effective oven cleaning services. Let our professionals handle the dirty job for you! With years of experience and premium equipment, we guarantee your satisfaction.</p>
+    </section>
 
-<nav>
-  <a href="#about">About Us</a>
-  <a href="#services">Services</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <h3>🧽 Deep Clean Service</h3>
+        <p>Professional deep cleaning that removes grease, grime, and burnt-on food from every corner of your oven.</p>
+      </div>
+      <div class="service-card fade-in">
+        <h3>🏠 In-Home Service</h3>
+        <p>We come to your location with all professional equipment. No need to transport your oven anywhere.</p>
+      </div>
+      <div class="service-card fade-in">
+        <h3>✨ Eco-Friendly Products</h3>
+        <p>Safe, non-toxic cleaning products that are effective yet gentle on your appliances and family.</p>
+      </div>
+      <div class="service-card fade-in">
+        <h3>💯 Satisfaction Guaranteed</h3>
+        <p>100% satisfaction guarantee or we'll return for free. Your happiness is our priority.</p>
+      </div>
+    </div>
 
-<main>
+    <section class="booking-form fade-in">
+      <h2>Book Your Cleaning</h2>
+      
+      <div class="success-message" id="successMessage">
+        ✅ Your booking has been successfully submitted! We'll contact you shortly to confirm your appointment.
+      </div>
 
-  <section class="section" id="about" data-aos="fade-up">
-    <h2>About Us</h2>
-    <p>We offer professional oven cleaning services that bring your appliance back to life. Trusted by over <strong>300 happy clients each month</strong> for our affordable pricing and stunning results.</p>
-  </section>
+      <form action="https://formspree.io/f/xzzgezkr" method="POST" id="bookingForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required />
+          </div>
 
-  <section class="section" id="services" data-aos="fade-up">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Single Door Oven Cleaning</li>
-      <li>Double Oven with Grill</li>
-      <li>Range Oven (all types)</li>
-      <li>Hob Cleaning</li>
-      <li>Extractor Fan Cleaning</li>
-      <li>AGA / Triple Door Ovens</li>
-    </ul>
-  </section>
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
 
-  <section class="section contact-info" id="contact" data-aos="fade-up">
-    <h2>Contact for Appointment</h2>
-    <p><strong>Phone:</strong> <a href="tel:07488988040">07488988040</a></p>
-    <p><strong>Email:</strong> <a href="mailto:ovenglowservice@gmail.com">ovenglowservice@gmail.com</a></p>
-  </section>
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-  <section class="section" id="get-in-touch" data-aos="fade-up">
-    <h2>Get in Touch</h2>
-    <form action="https://formspree.io/f/xzzgezkr"  method="POST">
-      <label>
-        Your Name:
-        <input type="text" name="name" required>
-      </label>
-      <label>
-        Your Email:
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        Your Message:
-        <textarea name="message" rows="4" required></textarea>
-      </label>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+          <div class="form-group">
+            <label for="postcode">Post Code <span class="required">*</span></label>
+            <input type="text" id="postcode" name="postcode" required />
+          </div>
 
-</main>
+          <div class="form-group full-width">
+            <label for="address">Full Address <span class="required">*</span></label>
+            <input type="text" id="address" name="address" required placeholder="House number, street name, area, city" />
+          </div>
 
-<div class="back-to-top" id="backToTop">↑</div>
+          <div class="form-group">
+            <label for="oventype">Oven Type <span class="required">*</span></label>
+            <select id="oventype" name="oventype" required>
+              <option value="" disabled selected>-- Select an option --</option>
+              <option value="single">Single Oven</option>
+              <option value="double">Double Oven (with Separate Grill)</option>
+              <option value="range90">90cm Range Oven</option>
+              <option value="range110">110cm Range Oven</option>
+              <option value="microwave">Microwave / Combi Oven</option>
+              <option value="aga2">AGA – 2 Oven</option>
+              <option value="aga3">AGA – 3 Oven</option>
+              <option value="aga4">AGA – 4 Oven</option>
+              <option value="grill">Extra Grill / Meat Pan</option>
+              <option value="bbq">BBQ Cleaning (May–August)</option>
+            </select>
+          </div>
 
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> 
+          <div class="form-group">
+            <label for="date">Preferred Cleaning Date <span class="required">*</span></label>
+            <input type="date" id="date" name="date" required />
+          </div>
 
-<script>
-  // Initialize AOS animations
-  AOS.init();
+          <div class="form-group full-width">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" name="message" rows="4" placeholder="Any special requests or additional information?"></textarea>
+          </div>
+        </div>
 
-  // Back to top button
-  const backToTop = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
-  });
+        <input type="hidden" name="_subject" value="New Oven Cleaning Booking" />
+        <input type="hidden" name="_captcha" value="false" />
 
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+        <button type="submit" class="submit-btn">
+          Submit Booking
+          <span class="loading" id="loading"></span>
+        </button>
+      </form>
+    </section>
 
-  // Intersection Observer for fade-in sections
-  const sections = document.querySelectorAll('.section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+    <div class="contact-info fade-in">
+      <h3>📞 Contact Information</h3>
+      <p><strong>Phone:</strong> <a href="tel:07488988040">07488 988040</a></p>
+      <p><strong>Service Areas:</strong> Shropshire, Wolverhampton & Surrounding Areas</p>
+      <p><strong>Working Hours:</strong> Monday - Saturday, 8:00 AM - 6:00 PM</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Oven Glow Cleaning. All rights reserved.</p>
+      <p>Contact us: <a href="tel:07488988040">07488 988040</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Set minimum date to today
+    document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+    // Form submission handler
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      const submitBtn = document.querySelector('.submit-btn');
+      const loading = document.getElementById('loading');
+      const successMessage = document.getElementById('successMessage');
+      
+      // Show loading state
+      loading.style.display = 'inline-block';
+      submitBtn.disabled = true;
+      
+      // Show success message after form submission
+      setTimeout(() => {
+        loading.style.display = 'none';
+        submitBtn.disabled = false;
+        successMessage.style.display = 'block';
+        
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+        
+        // Hide success message after 8 seconds
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 8000);
+      }, 1000);
     });
-  }, { threshold: 0.2 });
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Phone number formatting
+    document.getElementById('phone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length >= 6) {
+        value = value.replace(/(\d{5})(\d{3})(\d{3})/, '$1 $2 $3');
+      }
+      e.target.value = value;
+    });
+
+    // Postcode formatting
+    document.getElementById('postcode').addEventListener('input', function(e) {
+      e.target.value = e.target.value.toUpperCase();
+    });
+  </script>
 </body>
 </html>
-    
-     
-  
