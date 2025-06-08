@@ -3,82 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OvenGlow Service | Professional Oven Cleaning</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>OvenGlow Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eaf6ff;
+      margin: 0;
+      padding: 0;
+      color: #003366;
+    }
+
+    header {
+      background-color: #005baa;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      color: #005baa;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    .contact-info {
+      background-color: #cce6ff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #005baa;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+  </style>
 </head>
 <body>
-  <header class="topbar">
-    <img src="assets/logo.png" alt="OvenGlow Logo" class="logo">
-    <div class="contact-info">
-      <p><strong>Call us:</strong> 07488988040</p>
-      <p><strong>Email:</strong> ovenglowservic@gmail.com</p>
-    </div>
-  </header>
 
-  <section class="hero">
-    <h1>Professional Oven Cleaning in Your Area</h1>
-    <p>We make your oven look brand new!</p>
-    <a href="#quote" class="cta-button">Request a Free Quote</a>
+<header>
+  <img src="logo.png" alt="OvenGlow Logo" />
+  <h1>OvenGlow Cleaning Services</h1>
+</header>
+
+<main>
+  <section class="section">
+    <h2>About Us</h2>
+    <p>We offer professional oven cleaning services that bring your appliance back to life. Trusted by over <strong>300 happy clients each month</strong> for our affordable pricing and stunning results.</p>
   </section>
 
-  <section class="services">
+  <section class="section">
     <h2>Our Services</h2>
     <ul>
-      <li>✔️ Single Oven Cleaning</li>
-      <li>✔️ Double Oven Cleaning</li>
-      <li>✔️ Range Cooker Cleaning</li>
-      <li>✔️ Hobs & Extractors</li>
-      <li>✔️ Microwaves & BBQs</li>
+      <li>Single Door Oven Cleaning</li>
+      <li>Double Oven with Grill</li>
+      <li>Range Oven (all types)</li>
+      <li>Hob Cleaning</li>
+      <li>Extractor Fan Cleaning</li>
+      <li>AGA / Triple Door Ovens</li>
     </ul>
   </section>
 
-  <section class="pricing">
-    <h2>Pricing</h2>
-    <ul>
-      <li><strong>Single Oven:</strong> £50</li>
-      <li><strong>Double Oven:</strong> £70</li>
-      <li><strong>Range Cooker:</strong> £90</li>
-      <li><strong>Hob:</strong> from £20</li>
-      <li><strong>Extractor:</strong> from £20</li>
-    </ul>
+  <section class="section contact-info">
+    <h2>Contact for Appointment</h2>
+    <p><strong>Phone:</strong> <a href="tel:07488988040">07488988040</a></p>
+    <p><strong>Email:</strong> <a href="mailto:ovenglowservice@gmail.com">ovenglowservice@gmail.com</a></p>
   </section>
 
-  <section class="quote-form" id="quote">
-    <h2>Request a Free Quote</h2>
-    <form action="https://formsubmit.co/ovenglowservic@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="text" name="postcode" placeholder="Postcode" required />
-      <select name="service">
-        <option value="">Select Service</option>
-        <option value="Single Oven">Single Oven</option>
-        <option value="Double Oven">Double Oven</option>
-        <option value="Range Cooker">Range Cooker</option>
-        <option value="Hob">Hob</option>
-        <option value="Extractor">Extractor</option>
-      </select>
+  <section class="section">
+    <h2>Get in Touch</h2>
+    <form action="https://formspree.io/f/xzzgezkr" method="POST">
+      <label>
+        Your Name:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Your Email:
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Your Message:
+        <textarea name="message" rows="4" required></textarea>
+      </label>
       <button type="submit">Send</button>
     </form>
   </section>
+</main>
 
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <blockquote>
-      “My oven looks brand new. Quick and professional service!” – Sarah J.
-    </blockquote>
-    <blockquote>
-      “Highly recommend OvenGlow! Great attention to detail.” – Mark P.
-    </blockquote>
-  </section>
-
-  <section class="coverage">
-    <h2>Areas We Cover</h2>
-    <p>We serve Shrewsbury, Telford, and surrounding areas.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 OvenGlow Service. All rights reserved.</p>
-  </footer>
 </body>
 </html>
+
+    
+     
+  
